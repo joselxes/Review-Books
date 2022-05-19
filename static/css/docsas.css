@@ -1,19 +1,18 @@
 body {
-  margin: 0;
-  padding: 0;
-  background: #5f2b88;
+  padding: auto;
+  background: #bd97da;
   font-family: 'Cantora One', sans-serif;
 }
 .skew {
-  margin-top:  -300px;
-  padding: 300px 0;
-  transform: skew(0deg, -10deg);
+  padding: auto;
+  transform: skew(0deg, 0deg);
   background: #e92fa4;
+  margin-bottom: 10px;
 }
 
 .content {
 
-  transform: skew(0deg, 10deg);
+  transform: skew(0deg, 0deg);
   padding-top: 0px;
 }
 
@@ -28,9 +27,12 @@ p {
   color: #000;
 }
 .footer{
-  padding-top: 300px;
+  padding-top: 30px;
   text-align: center;
+
+
 }
 .footer p {
   color: #fff;
+
 }

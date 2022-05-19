@@ -27,7 +27,7 @@
     /* background-color: #090909; */
     color:#b1a9a9;
     /* background: linear-gradient(to right, #353232 , rgb(75, 71, 71)); */
-    background: linear-gradient(140deg,rgba(0,0,0,.2) 50%,transparent);
+    background: linear-gradient(140deg,rgba(0,0,0,.6) 60%,transparent);
     /* linear-gradient(140deg,rgba(0,0,0,.3) 50%,transparent) */
     padding: 0px;
     border: 1px solid black;
@@ -37,7 +37,7 @@
 .caja{
     /* width: 150px;
     height: 150px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* background-color: blueviolet; */
     margin: 1px;
     text-align: center;
@@ -86,11 +86,13 @@
     /* line-height: 20px; */
 }
 .comentariop{
- font-size: 14px;   
+ font-size: 14px; 
+ color: #fff;  
 }
 .comentariospan{
     font-size: 13px;   
-    color: rgb(40, 32, 88);
+    color: #fff;  
+    /* color: rgb(40, 32, 88); */
 }
 /* 
 <link rel="stylesheet" type="text/css" href="comentario.css">

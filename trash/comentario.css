@@ -26,7 +26,7 @@ body{
 .caja{
     /* width: 150px;
     height: 150px; */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     /* background-color: blueviolet; */
     margin: 1px;
     text-align: center;
@@ -76,27 +76,36 @@ body{
     font-size: 13px;   
 
 }
+.imgcomment {
+    width: 100%;
+    border-radius: 50%;
+    /* float: right;
+    margin-left: 20px;
+    margin-right:0; */
+      
+}
 /* 
-<link rel="stylesheet" type="text/css" href="comentario.css">
+              <div class="grid-layout">
+                <div class="caja left cl">
+                  <p class="comentariop"><strong>{{review.reader_id}}</strong></p>
+                </div>
+                <div class="caja  ci">
+                  <!-- <img class="imgcomment" src="/static/images/bandmember.jpg" > -->
+                  <img  class="imgcomment" src="https://mangaplus.shueisha.co.jp/drm/comment_icon/502.png?key=de20d0a6eb0a16761c8918837c5cae56&duration=86400" alt="Avatar" style="width:100%;">
+                </div>
+                <div class="caja  cc left">
+                  <p class="comentariop">: {{review.comentario}}</p>
+                </div>
+                <div class="caja  cf left">
+                  <span class="comentariospan"> <strong>Date</strong>: {{review.rate}}</span>
+                </div> 
+                <div class="caja  cv">
+                </div>   
+                <div class="caja  ct left">
+                  <span class="time-right comentariospan"> <strong>Rated</strong>: {{review.rate}}</span>
+                </div>
+              </div> 
 
-<div class="grid-layout">
-  <div class="caja left cl">
-    <p class="comentariop"><strong>{{review.reader_id}}</strong></p>
-  </div>
-  <div class="caja  ci">
-    <img src="https://mangaplus.shueisha.co.jp/drm/comment_icon/502.png?key=de20d0a6eb0a16761c8918837c5cae56&duration=86400" alt="Avatar" style="width:100%;">
-  </div>
-  <div class="caja  cc left">
-    <p class="comentariop">: {{review.comentario}} gggggggggggggggggggggggggggggg</p>
-  </div>
 
-  <div class="caja  cf">
-    <span class="time-right comentariospan"> <strong>Rated</strong>: {{review.rate}}</span>
-  </div> 
-  <div class="caja  cv">
 
-  </div>   
-  <div class="caja  ct">
-    <span class="time-right comentariospan"> <strong>Rated</strong>: {{review.rate}}</span>
-  </div> 
- */
+*/
