@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/css/docsas.css">
+        <link rel="stylesheet" href="/static/css/block.css">
+        <link rel="stylesheet" href="/static/css/comments.css">
+        <link rel="stylesheet" href="/static/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/comentario.css">
+      </head>
+    <body>
+
+  <div class="skew">
+    <div class="content">
+<center>
+      <table class="table table-sm table-striped table-dark col-lg-3 col-sm-6" style="width:70%;" >
+    <caption>  Links y descripcion de la pagina web en las pestanas</caption>
+      <tr>
+        <th scope="col"class="bg-primary">
+          <form  action="{{ url_for('searchPage') }}">
+            <button  class="btn btn-primary">&#x26D4;Go Search Page</button>
+          </form>
+        </th>
+        <th scope="col"class="bg-success">
+          <form  action="https://www.goodreads.com/">
+            <button  class="btn btn-success">&#x26D4;Go to goodreads.com</button>
+          </form>
+        </th>
+        <th scope="col"class="bg-warning">
+          <form  action="{{ url_for('index') }}" method="post">
+
+            <input type="hidden" name="session" value="no">
+            <button  class="btn btn-warning">&#x26D4;Log out</button>
+          </form>
+</tr>
+        </th>
+      <tr>
+        <td  colspan="5" style="text-align:center;">Puede realizar sus busquedas mediante</td>
+      </tr>
+      <tr >
+        <td>isb number</td>
+        <td>nombre de autor</td>
+        <td>titulo de la obra</td>
+      </tr>
+  </table>
+
+  <div class="container">
+    {% block body %}
+    {% endblock %}
+  </div>
+  </div>
+  </div>
+
+
+  <div class="footer">
+    <p>end :) </p>
+  </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #5f2b88;
+  font-family: 'Cantora One', sans-serif;
+}
+.skew {
+  margin-top:  -300px;
+  padding: 300px 0;
+  transform: skew(0deg, -10deg);
+  background: #e92fa4;
+}
+
+.content {
+
+  transform: skew(0deg, 10deg);
+  padding-top: 0px;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 40px;
+  color: #000;
+}
+p {
+  font-weight: lighter;
+  font-size: 20px;
+  color: #000;
+}
+.footer{
+  padding-top: 300px;
+  text-align: center;
+}
+.footer p {
+  color: #fff;
+}

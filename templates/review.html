@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+{% block title %}
+    Users reviews
+{% endblock %}
+
+{% block body %}
+
+  <h2>About the book :</h2>
+    <table class="masEsp">
+      <thead>
+        <tr>
+          <th >Bienvenido </th><th >{{name}}</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>Sbn Number</td><td style="font-size: 10;">{{book.sbnNumber}}</td>
+      </tr>
+      <tr>
+        <td>Titulo</td><td style="font-size: 10;">{{book.title}}</td>
+      </tr>
+
+      <tr>
+        <td>Publicacion</td><td >{{book.pubYear}}</td>
+      </tr>
+      <tr>
+        <td>Autor</td><td >{{book.author}}</td>
+      </tr>
+
+
+  </table>
+
+<br>
+<br>
+<br>
+
+<h2>Users Think</h2>
+    <ul>
+
+      {% for review in reviews  %}
+
+              <div class="grid-layout">
+                <div class="caja left cl">
+                  <p class="comentariop"><strong>{{review.reader_id}}</strong></p>
+                </div>
+                <div class="caja  ci">
+                  <!-- <img class="imgcomment" src="/static/images/bandmember.jpg" > -->
+                  <img  class="imgcomment" src="https://mangaplus.shueisha.co.jp/drm/comment_icon/502.png?key=de20d0a6eb0a16761c8918837c5cae56&duration=86400" alt="Avatar" style="width:100%;">
+                </div>
+                <div class="caja  cc left">
+                  <p class="comentariop">: {{review.comentario}}</p>
+                </div>
+                <div class="caja  cf left">
+                  <span class="comentariospan"> <strong>Date</strong>: {{review.rate}}</span>
+                </div> 
+                <div class="caja  cv">
+                </div>   
+                <div class="caja  ct left">
+                  <span class="time-right comentariospan"> <strong>Rated</strong>: {{review.rate}}</span>
+                </div>
+              </div> 
+
+            </li>        
+      {% else %}
+        <h2>No existen reviews, se el primero en recomendarlo.</h2>
+      {% endfor %}
+    </ul>
+    {%if oneComment %}
+    <form action="{{ url_for('checkComment') }}"  method="post">
+      <div class="form-group">
+        <select class="form-control" name="rate" required>
+            {% for rate in range (1,6) %}
+              <option value="{{ rate }}">{{ rate }} </option>
+            {% else %}
+            <h3>no hay comentarios</h3>
+            {% endfor %}
+        </select>
+      </div>
+        <input type="text" class="form-control" name="comentario" id="sbnHeaderBox"  placeholder="insert coments book" required>
+        <input type="hidden" name="name" value={{name}}>
+        <button type="submit" class="btn btn-primary" style="margin:5px;">submit comment</button>
+    </form>
+    {% else %}
+      <br>
+      <br>
+      <h3>You already submit a review, you can't submit more than 1 comment</h3>
+    {% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,74 @@
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.mensajes {
+  border: 2px solid #dedede;
+  background-color: #faaeae;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.darker {
+  border-color: rgb(40, 32, 88);
+  /* border-color: #ccc; */
+  background-color: #30b43b;
+  /* background-color: #efe997; */
+  /* border-radius: 50px; */
+}
+
+
+.mensajes::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.mensajes img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.mensajes img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+/* 
+.time-right {
+  float: right;
+  color: rgb(40, 32, 88);
+} */
+/* .time-right {
+  float: right;
+  color: rgb(40, 32, 88);
+} */
+
+.time-left {
+  float: left;
+  color: #999;
+}
+.mensajes > p {
+  color: black;
+}
+/* .spanp{ */
+  /* color: #777;
+  font-size: 12px; */
+  /* bottom: 0px; */
+  /* position: absolute; */
+/* } */
+
+
+/* <li> 
+<div class="mensajes darker">
+  <p class="nameuser"><strong>{{review.reader_id}}</strong></p>
+  <br>
+  <img src="/static/images/bandmember.jpg" alt="Avatar" style="width:100%;"> 
+  <p>: {{review.comentario}}</p>
+  <span class="time-right"> <strong>Rated</strong>: {{review.rate}}</span>
+</div>  */
