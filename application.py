@@ -120,7 +120,12 @@ def searchPage():
         session["author"]=integra(request.form.get("author"))
         session["pubYear"]=integra(request.form.get("pubYear"))
         print(session["sbnNumber"],session["title"],session["author"],session["pubYear"])
-        session["books"]=db.execute("""SELECT "sbnNumber","title","author", "pubYear" FROM "books" WHERE "title" LIKE :titulo AND "pubYear" LIKE :year AND "author" LIKE :creador AND "sbnNumber" LIKE :num""",{"titulo":session["title"],"year":session["pubYear"],"creador":session["author"],"num":session["sbnNumber"]}).fetchall()
+        try:
+            session["books"]=db.execute("""SELECT "sbnNumber","title","author", "pubYear" FROM "books" WHERE "title" LIKE :titulo AND "pubYear" LIKE :year AND "author" LIKE :creador AND "sbnNumber" LIKE :num""",{"titulo":session["title"],"year":session["pubYear"],"creador":session["author"],"num":session["sbnNumber"]}).fetchall()
+        except:
+            session.pop('reader',None)
+            session["mensaje"]=" User'Id not available"
+            return redirect(url_for('index'))
         print(session["books"]),"/////////////////////"
 
 
@@ -173,17 +178,21 @@ def checkComment():
 #     else:
 #         return redirect(url_for('searchPage'))
 
+
+# NO HAY API DE GOODREADERS QUE KK AHI QUEDA
 @app.route("/api/searchPage/<Source>" )
 def bookAPI(Source):
 
     session["datareview"]=""
     session["databook"]=db.execute("""SELECT * FROM "books" WHERE "sbnNumber" = :Source""",{"Source":Source}).fetchone()
+    print(session["databook"])
     if session["databook"] is None:
         return jsonify({"error":"invalid requested book "}),404
     session["res"] = requests.get("https://www.goodreads.com/book/review_counts.json",params={"key": "XpBeTod1UwDEF989WE4g", "isbns": Source})
-    print(session["res"].json(),"mmmmmmmmmmmmmm")
-    session["data"]=session["res"].json()
+    print(type(session["res"]),"----------")
 
+
+    return session["res"]
     return jsonify({
     "title": session["databook"].title,
     "author": session["databook"].author,
